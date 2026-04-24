@@ -1,0 +1,9 @@
+﻿User-agent: *
+Allow: /
+
+Disallow: /wp-json/
+Disallow: /feed/
+Disallow: /repair/
+Disallow: /contacts/
+
+Sitemap: https://jullyconsult.com.ng/sitemap.xml
