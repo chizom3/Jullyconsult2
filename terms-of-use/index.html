@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -36,6 +36,37 @@
       max-width: 980px;
       margin: 32px auto;
       padding: 0 16px 32px;
+    }
+
+    .topbar {
+      background: #ffffff;
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+    }
+
+    .topbar-inner {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .topbar-brand {
+      color: #0f3f4d;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+    }
+
+    .topbar-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 0.9rem;
+      font-weight: 700;
     }
 
     .card {
@@ -90,29 +121,47 @@
     }
 
     @media (max-width: 640px) {
+      .topbar-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
       .card { padding: 20px; }
     }
   </style>
   <link rel="stylesheet" href="../assets/css/site-fixes.css" />
+    <script src="../assets/js/mobile-menu-fix.js"></script>
 </head>
 <body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="topbar-brand" href="../index.html">JULLY CONSULT</a>
+      <nav class="topbar-nav" aria-label="Primary">
+        <a href="../index.html">HOME</a>
+        <a href="../about-jullyconsult/index.html">ABOUT</a>
+        <a href="../textile-collection-services/index.html">SERVICES</a>
+        <a href="../solar-energy-integration/index.html">SOLAR ENERGY</a>
+        <a href="../contact-jullyconsult/index.html">CONTACT</a>
+      </nav>
+    </div>
+  </header>
   <main class="wrap">
     <article class="card">
       <h1>TERMS OF USE</h1>
       <p class="lead">
-        The website <strong>www.jullyconsult.com.ng.ng</strong> is the property of <strong>JullyConsult Venture</strong>
+        The website <strong>www.jullyconsult.com.ng</strong> is the property of <strong>JullyConsult Venture</strong>
         (hereinafter referred to as "JullyConsult," "the Social Enterprise," "we," "us," or "our").
       </p>
 
       <p>
         By accessing and using this website, you agree to comply with these Terms of Use, as well as our Privacy and Cookies Policy.
-        If you do not agree with these terms, you should immediately discontinue use of www.jullyconsult.com.ng.ng.
+        If you do not agree with these terms, you should immediately discontinue use of www.jullyconsult.com.ng.
       </p>
       <p>You are not required to register to access or browse the content of this website.</p>
       <p>
-        You are permitted to browse www.jullyconsult.com.ng.ng. and print pages strictly for personal and non-commercial use.
+        You are permitted to browse www.jullyconsult.com.ng. and print pages strictly for personal and non-commercial use.
         All texts, photographs, graphics, logos, designs, and other materials published on this website are the intellectual
-        property of JullyConsult Venture. Any copying, reproduction, distribution, modification, storage, or commercial use
+        property of JullyConsult Venture. Any copying, reproduction, second-hand distribution, modification, storage, or commercial use
         without prior written consent from JullyConsult Venture is strictly prohibited.
       </p>
       <p>
@@ -136,13 +185,13 @@
         how we process it, and your rights regarding your data.
       </p>
       <p>
-        By using www.jullyconsult.com.ng.ng, you acknowledge and agree to the terms of our Privacy Policy,
+        By using www.jullyconsult.com.ng, you acknowledge and agree to the terms of our Privacy Policy,
         including the type, method, and legal basis for data collection. If you disagree, you should stop using the website.
       </p>
 
       <h2>INFORMATION WE COLLECT</h2>
       <p>
-        At www.jullyconsult.com.ng.ng, we collect both personal and aggregate statistical information about our visitors.
+        At www.jullyconsult.com.ng, we collect both personal and aggregate statistical information about our visitors.
       </p>
 
       <p><strong>Personal Information</strong></p>
@@ -229,5 +278,25 @@
       <p class="small">Last updated: February 28, 2026</p>
     </article>
   </main>
-</body>
+<footer class="site-standard-footer">
+  <div class="footer-inner">
+    <span>OWNED BY JULLY CONSULT LTD</span>
+    <span>
+      <a href="../terms-of-use/index.html">Terms of Use</a>
+      |
+      <a href="../privacy-policy/index.html">Privacy Policy</a>
+      |
+      <a href="../assets/downloads/jullyconsult-dei-policy.pdf">Diversity, Equality and Inclusion Policy</a>
+    </span>
+    <div class="footer-socials" aria-label="Social media links">
+      <a href="https://www.facebook.com/JullyConsult" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 22v-8h2.7l.4-3h-3.1V9.1c0-.9.3-1.6 1.7-1.6H17V4.8c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.4V11H7.5v3h2.8v8h3.2Z"/></svg></a>
+      <a href="https://www.instagram.com/jully_consult/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.8 3h8.4A4.8 4.8 0 0 1 21 7.8v8.4a4.8 4.8 0 0 1-4.8 4.8H7.8A4.8 4.8 0 0 1 3 16.2V7.8A4.8 4.8 0 0 1 7.8 3Zm0 1.8A3 3 0 0 0 4.8 7.8v8.4a3 3 0 0 0 3 3h8.4a3 3 0 0 0 3-3V7.8a3 3 0 0 0-3-3H7.8Zm8.85 1.35a1.05 1.05 0 1 1 0 2.1 1.05 1.05 0 0 1 0-2.1ZM12 7.6A4.4 4.4 0 1 1 7.6 12 4.4 4.4 0 0 1 12 7.6Zm0 1.8A2.6 2.6 0 1 0 14.6 12 2.6 2.6 0 0 0 12 9.4Z"/></svg></a>
+      <a href="https://x.com/JullyConsult" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 3H21l-6.54 7.47L22 21h-5.9l-4.62-6.04L6.2 21H4.1l7-8L2 3h6.05l4.18 5.52L18.9 3Zm-1.03 16.2h1.16L7.42 4.74H6.17L17.87 19.2Z"/></svg></a>
+      <a href="https://www.tiktok.com/@jully.consult" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.7 3c.33 1.9 1.47 3.44 3.3 4.16.67.27 1.38.4 2.1.4V10a8.2 8.2 0 0 1-3.6-.83v5.35a5.53 5.53 0 1 1-4.77-5.48v2.5a3.03 3.03 0 1 0 2.97 3.03V3h2Z"/></svg></a>
+    </div>
+    <span>Copyright &copy; 2026 Jully Consult. All rights reserved.</span>
+  </div>
+</footer>
+  </body>
 </html>
+

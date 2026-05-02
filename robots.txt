@@ -1,9 +1,9 @@
-﻿User-agent: *
+User-agent: *
 Allow: /
 
 Disallow: /wp-json/
 Disallow: /feed/
-Disallow: /repair/
-Disallow: /contacts/
+Disallow: /page-not-found/
+Disallow: /contact-jullyconsult/
 
 Sitemap: https://jullyconsult.com.ng/sitemap.xml

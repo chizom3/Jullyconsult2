@@ -1,7 +1,7 @@
 var mi_version = '9.11.1';
 				var mi_track_user = true;
 				var mi_no_track_reason = '';
-								var MonsterInsightsDefaultLocations = {"page_location":"..\/..\/textile-cleaning-and-repair-services"};
+								var MonsterInsightsDefaultLocations = {"page_location":"..\/..\/repair-and-reproduction"};
 								if ( typeof MonsterInsightsPrivacyGuardFilter === 'function' ) {
 					var MonsterInsightsLocations = (typeof MonsterInsightsExcludeQuery === 'object') ? MonsterInsightsPrivacyGuardFilter( MonsterInsightsExcludeQuery ) : MonsterInsightsPrivacyGuardFilter( MonsterInsightsDefaultLocations );
 				} else {
@@ -210,3 +210,5 @@ var mi_version = '9.11.1';
 						window['gtag'] = __gtagTracker;
 					})();
 									}
+
+
