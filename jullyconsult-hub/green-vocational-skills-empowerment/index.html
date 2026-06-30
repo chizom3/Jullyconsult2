@@ -541,19 +541,41 @@
     </style>
       <link rel="stylesheet" href="../../assets/css/site-fixes.css" />
     <script src="../../assets/js/mobile-menu-fix.js"></script>
+    <link rel="icon" type="image/png" href="../../assets/images/Jully%20Consult%20logo.png">
+    <link rel="apple-touch-icon" href="../../assets/images/Jully%20Consult%20logo.png">
 </head>
   <body class="hub-project-page">
     <nav class="project-nav" aria-label="Project navigation">
-      <a href="../../index.html" aria-label="JullyConsult home">
+      <a href="../../" aria-label="JullyConsult home">
         <img src="../../assets/images/Jully Consult logo.png" alt="JullyConsult logo" />
       </a>
-      <div class="project-nav-links">
-        <a href="../../index.html">HOME</a>
-        <a href="../../about-jullyconsult/index.html">ABOUT</a>
-        <a href="../../textile-collection-services/index.html">SERVICES</a>
-        <a href="../index.html">HUBS</a>
-        <a href="../../contact-jullyconsult-en/index.html">CONTACT</a>
-      </div>
+      <ul class="project-nav-links">
+        <li><a href="../../">HOME</a></li>
+        <li class="menu-item-has-children">
+          <a href="../../about-jullyconsult/">ABOUT</a>
+          <ul class="sub-menu">
+            <li><a href="../../about-jullyconsult/">Jully Consult</a></li>
+            <li><a href="../../esg-commitment/">ESG COMMITMENT</a></li>
+            <li><a href="../../partnerships-and-initiatives/">INITIATIVES AND ECO EVENTS</a></li>
+            <li><a href="../../creative-design-portfolio/">CREATIVE DESIGN PORTFOLIO</a></li>
+          </ul>
+        </li>
+        <li class="menu-item-has-children">
+          <a href="../../textile-collection-services/">SERVICES</a>
+          <ul class="sub-menu">
+            <li><a href="../../textile-collection-services/">COLLECTION</a></li>
+            <li><a href="../../textile-sorting-services/">SORTING</a></li>
+            <li><a href="../../repair-and-reproduction/">REPAIR AND REPRODUCTION</a></li>
+            <li><a href="../../second-hand-textile-distribution/">MARKET ACCESS &amp; DISTRIBUTION</a></li>
+            <li><a href="../../textile-recycling-and-ai-designs/">AI INNOVATION &amp; ZERO-WASTE DESIGN</a></li>
+            <li><a href="../../shredded-fiber-and-products/">SHREDDED FIBER &amp; PRODUCTS</a></li>
+            <li><a href="../../water-conservation/">WATER CONSERVATION</a></li>
+            <li><a href="../../solar-energy-integration/">SOLAR ENERGY INTEGRATION</a></li>
+          </ul>
+        </li>
+        <li><a href="../">HUBS</a></li>
+        <li><a href="../../contact-jullyconsult-en/">CONTACT</a></li>
+      </ul>
     </nav>
 
     <header class="hero">
@@ -570,7 +592,7 @@
         <div class="button-row">
           <a class="button" href="#contact">Support Youth Green Skills</a>
           <a class="button light" href="#partner">Partner With Us</a>
-          <a class="button light" href="../index.html">Back to Hub</a>
+          <a class="button light" href="../">Back to Hub</a>
         </div>
       </div>
     </header>
@@ -801,7 +823,7 @@
             <a class="button light" href="#contact">Sponsor a Youth Training Cohort</a>
             <a class="button light" href="#contact">Donate Tools and Materials</a>
             <a class="button light" href="#partner">Partner With JullyConsult</a>
-            <a class="button light" href="../index.html">Back to Hub</a>
+            <a class="button light" href="../">Back to Hub</a>
           </div>
         </div>
       </section>
@@ -813,7 +835,7 @@
           <p class="lead">
             Use this form to register interest in supporting Green Vocational Skills Empowerment, volunteering, partnering, or buying products.
           </p>
-          <form class="contact-form" action="../../send-form.php" method="post">
+          <form class="contact-form" action="../../send-form.php" method="post" target="jully-form-sink" data-form-feedback="contact">
             <input type="hidden" name="form_source" value="Green Vocational Skills Empowerment" />
             <label>Name <input type="text" name="name" autocomplete="name" required /></label>
             <label>Email <input type="email" name="email" autocomplete="email" required /></label>
@@ -831,7 +853,7 @@
             <label class="full">Message <textarea name="message" required></textarea></label>
             <div class="full button-row">
               <button class="button" type="submit">Send Interest</button>
-              <a class="button ghost" href="../index.html">Back to Hub</a>
+              <a class="button ghost" href="../">Back to Hub</a>
             </div>
           </form>
         </div>
@@ -840,11 +862,24 @@
 
     <footer class="site-standard-footer">
   <div class="footer-inner">
-    <span>OWNED BY JULLY CONSULT LTD</span>
+        <form class="newsletter-signup-form" action="../../subscribe-newsletter.php" method="post" target="jully-form-sink" data-form-feedback="newsletter">
+      <div class="newsletter-signup-copy">
+        <strong>Subscribe to our newsletter</strong>
+        <span>Get JullyConsult updates on circular fashion, ESG initiatives, and community programs.</span>
+      </div>
+      <div class="newsletter-signup-controls">
+        <label class="sr-only" for="newsletter-email-6">Email address</label>
+        <input id="newsletter-email-6" type="email" name="email" placeholder="Email address" autocomplete="email" required>
+        <input type="text" name="website" tabindex="-1" autocomplete="off" class="newsletter-hp" aria-hidden="true">
+        <input type="hidden" name="source_page" value="jullyconsult hub\green vocational skills empowerment\index.html footer">
+        <button type="submit">Subscribe</button>
+      </div>
+    </form>
+<span>OWNED BY JULLY CONSULT LTD</span>
     <span>
-      <a href="../../terms-of-use/index.html">Terms of Use</a>
+      <a href="../../terms-of-use/">Terms of Use</a>
       |
-      <a href="../../privacy-policy/index.html">Privacy Policy</a>
+      <a href="../../privacy-policy/">Privacy Policy</a>
       |
       <a href="../../assets/downloads/jullyconsult-dei-policy.pdf">Diversity, Equality and Inclusion Policy</a>
     </span>
@@ -886,5 +921,7 @@
 
       counters.forEach((counter) => observer.observe(counter));
     </script>
-  </body>
+    <script src="../../assets/js/form-feedback.js"></script>
+    <iframe name="jully-form-sink" class="form-feedback-sink" title="Form submission result"></iframe>
+</body>
 </html>

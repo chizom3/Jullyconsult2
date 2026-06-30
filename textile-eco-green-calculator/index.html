@@ -18,24 +18,24 @@
   <meta name="twitter:title" content="Textile Eco-Green Calculator | JullyConsult">
   <meta name="twitter:description" content="Measure the environmental impact and resource savings achieved when textiles and plastics are separated from general waste.">
   <meta name="twitter:image" content="../assets/images/group-people-holding-recycling-sign-concept.jpg">
-  <link rel="icon" href="../assets/images/0f343a81_apple-icon-144x144-1.png" sizes="32x32">
-  <link rel="apple-touch-icon" href="../assets/images/0f343a81_apple-icon-144x144-1.png">
   <link rel="stylesheet" href="../assets/css/site-fixes.css">
     <script src="../assets/js/mobile-menu-fix.js"></script>
+    <link rel="icon" type="image/png" href="../assets/images/Jully%20Consult%20logo.png">
+    <link rel="apple-touch-icon" href="../assets/images/Jully%20Consult%20logo.png">
 </head>
 <body class="eco-calc-page">
   <header class="eco-calc-header">
     <div class="eco-calc-shell">
       <div class="eco-calc-header-inner">
-        <a class="eco-calc-brand" href="../index.html">
+        <a class="eco-calc-brand" href="../">
           <img src="../assets/images/Jully Consult logo.png" alt="JullyConsult logo">
           <span>JullyConsult</span>
         </a>
         <nav class="eco-calc-nav" aria-label="Primary">
-          <a href="../index.html">Home</a>
-          <a href="../esg-commitment/index.html">ESG Commitment</a>
-          <a href="../solar-energy-integration/index.html">Solar Energy</a>
-          <a class="eco-calc-nav-primary" href="../contact-jullyconsult/index.html">Contact</a>
+          <a href="../">Home</a>
+          <a href="../esg-commitment/">ESG Commitment</a>
+          <a href="../solar-energy-integration/">Solar Energy</a>
+          <a class="eco-calc-nav-primary" href="../contact-jullyconsult/">Contact</a>
         </nav>
       </div>
     </div>
@@ -126,11 +126,24 @@
 
   <footer class="site-standard-footer">
   <div class="footer-inner">
-    <span>OWNED BY JULLY CONSULT LTD</span>
+        <form class="newsletter-signup-form" action="../subscribe-newsletter.php" method="post" target="jully-form-sink" data-form-feedback="newsletter">
+      <div class="newsletter-signup-copy">
+        <strong>Subscribe to our newsletter</strong>
+        <span>Get JullyConsult updates on circular fashion, ESG initiatives, and community programs.</span>
+      </div>
+      <div class="newsletter-signup-controls">
+        <label class="sr-only" for="newsletter-email-21">Email address</label>
+        <input id="newsletter-email-21" type="email" name="email" placeholder="Email address" autocomplete="email" required>
+        <input type="text" name="website" tabindex="-1" autocomplete="off" class="newsletter-hp" aria-hidden="true">
+        <input type="hidden" name="source_page" value="textile eco green calculator\index.html footer">
+        <button type="submit">Subscribe</button>
+      </div>
+    </form>
+<span>OWNED BY JULLY CONSULT LTD</span>
     <span>
-      <a href="../terms-of-use/index.html">Terms of Use</a>
+      <a href="../terms-of-use/">Terms of Use</a>
       |
-      <a href="../privacy-policy/index.html">Privacy Policy</a>
+      <a href="../privacy-policy/">Privacy Policy</a>
       |
       <a href="../assets/downloads/jullyconsult-dei-policy.pdf">Diversity, Equality and Inclusion Policy</a>
     </span>
@@ -145,6 +158,8 @@
 </footer>
 
   <script src="../assets/js/eco-calculator-app.js"></script>
-  </body>
+    <script src="../assets/js/form-feedback.js"></script>
+    <iframe name="jully-form-sink" class="form-feedback-sink" title="Form submission result"></iframe>
+</body>
 </html>
 

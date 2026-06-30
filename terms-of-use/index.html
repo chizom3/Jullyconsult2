@@ -131,17 +131,45 @@
   </style>
   <link rel="stylesheet" href="../assets/css/site-fixes.css" />
     <script src="../assets/js/mobile-menu-fix.js"></script>
+    <link rel="icon" type="image/png" href="../assets/images/Jully%20Consult%20logo.png">
+    <link rel="apple-touch-icon" href="../assets/images/Jully%20Consult%20logo.png">
 </head>
-<body>
+<body class="policy-page">
   <header class="topbar">
     <div class="topbar-inner">
-      <a class="topbar-brand" href="../index.html">JULLY CONSULT</a>
-      <nav class="topbar-nav" aria-label="Primary">
-        <a href="../index.html">HOME</a>
-        <a href="../about-jullyconsult/index.html">ABOUT</a>
-        <a href="../textile-collection-services/index.html">SERVICES</a>
-        <a href="../solar-energy-integration/index.html">SOLAR ENERGY</a>
-        <a href="../contact-jullyconsult/index.html">CONTACT</a>
+      <a class="topbar-brand" href="../" aria-label="JullyConsult home">
+        <img src="../assets/images/Jully Consult logo.png" alt="JullyConsult logo" />
+      </a>
+      <nav aria-label="Primary">
+        <ul class="topbar-nav">
+          <li><a href="../">HOME</a></li>
+          <li class="menu-item-has-children">
+            <a href="../about-jullyconsult/">ABOUT</a>
+            <ul class="sub-menu">
+              <li><a href="../about-jullyconsult/">Jully Consult</a></li>
+              <li><a href="../esg-commitment/">ESG COMMITMENT</a></li>
+              <li><a href="../partnerships-and-initiatives/">INITIATIVES AND ECO EVENTS</a></li>
+              <li><a href="../creative-design-portfolio/">CREATIVE DESIGN PORTFOLIO</a></li>
+            </ul>
+          </li>
+          <li class="menu-item-has-children">
+            <a href="../textile-collection-services/">SERVICES</a>
+            <ul class="sub-menu">
+              <li><a href="../textile-collection-services/">COLLECTION</a></li>
+              <li><a href="../textile-sorting-services/">SORTING</a></li>
+              <li><a href="../repair-and-reproduction/">REPAIR AND REPRODUCTION</a></li>
+              <li><a href="../second-hand-textile-distribution/">MARKET ACCESS &amp; DISTRIBUTION</a></li>
+              <li><a href="../textile-recycling-and-ai-designs/">AI INNOVATION &amp; ZERO-WASTE DESIGN</a></li>
+              <li><a href="../shredded-fiber-and-products/">SHREDDED FIBER &amp; PRODUCTS</a></li>
+              <li><a href="../water-conservation/">WATER CONSERVATION</a></li>
+              <li><a href="../solar-energy-integration/">SOLAR ENERGY INTEGRATION</a></li>
+            </ul>
+          </li>
+          <li><a href="../jullyconsult-hub/">HUBS</a></li>
+          <li><a href="../contact-jullyconsult-en/">CONTACT</a></li>
+          <li><a href="../terms-of-use/" aria-current="page">TERMS</a></li>
+          <li><a href="../privacy-policy/">PRIVACY</a></li>
+        </ul>
       </nav>
     </div>
   </header>
@@ -280,11 +308,24 @@
   </main>
 <footer class="site-standard-footer">
   <div class="footer-inner">
-    <span>OWNED BY JULLY CONSULT LTD</span>
+        <form class="newsletter-signup-form" action="../subscribe-newsletter.php" method="post" target="jully-form-sink" data-form-feedback="newsletter">
+      <div class="newsletter-signup-copy">
+        <strong>Subscribe to our newsletter</strong>
+        <span>Get JullyConsult updates on circular fashion, ESG initiatives, and community programs.</span>
+      </div>
+      <div class="newsletter-signup-controls">
+        <label class="sr-only" for="newsletter-email-19">Email address</label>
+        <input id="newsletter-email-19" type="email" name="email" placeholder="Email address" autocomplete="email" required>
+        <input type="text" name="website" tabindex="-1" autocomplete="off" class="newsletter-hp" aria-hidden="true">
+        <input type="hidden" name="source_page" value="terms of use\index.html footer">
+        <button type="submit">Subscribe</button>
+      </div>
+    </form>
+<span>OWNED BY JULLY CONSULT LTD</span>
     <span>
-      <a href="../terms-of-use/index.html">Terms of Use</a>
+      <a href="../terms-of-use/">Terms of Use</a>
       |
-      <a href="../privacy-policy/index.html">Privacy Policy</a>
+      <a href="../privacy-policy/">Privacy Policy</a>
       |
       <a href="../assets/downloads/jullyconsult-dei-policy.pdf">Diversity, Equality and Inclusion Policy</a>
     </span>
@@ -297,6 +338,8 @@
     <span>Copyright &copy; 2026 Jully Consult. All rights reserved.</span>
   </div>
 </footer>
-  </body>
+    <script src="../assets/js/form-feedback.js"></script>
+    <iframe name="jully-form-sink" class="form-feedback-sink" title="Form submission result"></iframe>
+</body>
 </html>
 

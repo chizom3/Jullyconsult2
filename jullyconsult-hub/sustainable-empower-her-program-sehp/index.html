@@ -491,19 +491,41 @@
     </style>
       <link rel="stylesheet" href="../../assets/css/site-fixes.css" />
     <script src="../../assets/js/mobile-menu-fix.js"></script>
+    <link rel="icon" type="image/png" href="../../assets/images/Jully%20Consult%20logo.png">
+    <link rel="apple-touch-icon" href="../../assets/images/Jully%20Consult%20logo.png">
 </head>
   <body class="hub-project-page">
     <header class="project-nav">
-      <a href="../../index.html">
+      <a href="../../">
         <img src="../../assets/images/Jully Consult logo.png" alt="Jully Consult" />
       </a>
-      <nav class="project-nav-links" aria-label="Project navigation">
-        <a href="../../index.html">HOME</a>
-        <a href="../../about-jullyconsult/index.html">ABOUT</a>
-        <a href="../../textile-collection-services/index.html">SERVICES</a>
-        <a href="../index.html">HUBS</a>
-        <a href="../../contact-jullyconsult-en/index.html">CONTACT</a>
-      </nav>
+      <ul class="project-nav-links">
+        <li><a href="../../">HOME</a></li>
+        <li class="menu-item-has-children">
+          <a href="../../about-jullyconsult/">ABOUT</a>
+          <ul class="sub-menu">
+            <li><a href="../../about-jullyconsult/">Jully Consult</a></li>
+            <li><a href="../../esg-commitment/">ESG COMMITMENT</a></li>
+            <li><a href="../../partnerships-and-initiatives/">INITIATIVES AND ECO EVENTS</a></li>
+            <li><a href="../../creative-design-portfolio/">CREATIVE DESIGN PORTFOLIO</a></li>
+          </ul>
+        </li>
+        <li class="menu-item-has-children">
+          <a href="../../textile-collection-services/">SERVICES</a>
+          <ul class="sub-menu">
+            <li><a href="../../textile-collection-services/">COLLECTION</a></li>
+            <li><a href="../../textile-sorting-services/">SORTING</a></li>
+            <li><a href="../../repair-and-reproduction/">REPAIR AND REPRODUCTION</a></li>
+            <li><a href="../../second-hand-textile-distribution/">MARKET ACCESS &amp; DISTRIBUTION</a></li>
+            <li><a href="../../textile-recycling-and-ai-designs/">AI INNOVATION &amp; ZERO-WASTE DESIGN</a></li>
+            <li><a href="../../shredded-fiber-and-products/">SHREDDED FIBER &amp; PRODUCTS</a></li>
+            <li><a href="../../water-conservation/">WATER CONSERVATION</a></li>
+            <li><a href="../../solar-energy-integration/">SOLAR ENERGY INTEGRATION</a></li>
+          </ul>
+        </li>
+        <li><a href="../">HUBS</a></li>
+        <li><a href="../../contact-jullyconsult-en/">CONTACT</a></li>
+      </ul>
     </header>
 
     <main>
@@ -520,7 +542,7 @@
           <div class="actions">
             <a class="button" href="#contact">Support Women's Green Enterprises</a>
             <a class="button secondary" href="#partner">Partner With Us</a>
-            <a class="button secondary" href="../index.html">Back to Hub</a>
+            <a class="button secondary" href="../">Back to Hub</a>
           </div>
         </div>
       </section>
@@ -708,10 +730,10 @@
             </p>
           </div>
           <div class="actions">
-            <a class="button" href="../../contact-jullyconsult-en/index.html">Sponsor a Women's Training Cohort</a>
-            <a class="button secondary" href="../../contact-jullyconsult-en/index.html">Partner With JullyConsult</a>
-            <a class="button secondary" href="../../contact-jullyconsult-en/index.html">Support Green Enterprise Kits</a>
-            <a class="button secondary" href="../index.html">Back to Hub</a>
+            <a class="button" href="../../contact-jullyconsult-en/">Sponsor a Women's Training Cohort</a>
+            <a class="button secondary" href="../../contact-jullyconsult-en/">Partner With JullyConsult</a>
+            <a class="button secondary" href="../../contact-jullyconsult-en/">Support Green Enterprise Kits</a>
+            <a class="button secondary" href="../">Back to Hub</a>
           </div>
         </div>
       </section>
@@ -723,7 +745,7 @@
               <h2>Contact and Partnership Form</h2>
               <p>Use this form to express interest in donating, partnering, sponsoring a women-led training cohort, volunteering, or supporting enterprise kits.</p>
             </div>
-            <form class="contact-form" action="../../send-form.php" method="post">
+            <form class="contact-form" action="../../send-form.php" method="post" target="jully-form-sink" data-form-feedback="contact">
               <input type="hidden" name="form_source" value="Sustainable Empower Her Program SEhP" />
               <input type="text" name="name" placeholder="Name" required />
               <input type="email" name="email" placeholder="Email" required />
@@ -749,11 +771,24 @@
 
     <footer class="site-standard-footer">
   <div class="footer-inner">
-    <span>OWNED BY JULLY CONSULT LTD</span>
+        <form class="newsletter-signup-form" action="../../subscribe-newsletter.php" method="post" target="jully-form-sink" data-form-feedback="newsletter">
+      <div class="newsletter-signup-copy">
+        <strong>Subscribe to our newsletter</strong>
+        <span>Get JullyConsult updates on circular fashion, ESG initiatives, and community programs.</span>
+      </div>
+      <div class="newsletter-signup-controls">
+        <label class="sr-only" for="newsletter-email-9">Email address</label>
+        <input id="newsletter-email-9" type="email" name="email" placeholder="Email address" autocomplete="email" required>
+        <input type="text" name="website" tabindex="-1" autocomplete="off" class="newsletter-hp" aria-hidden="true">
+        <input type="hidden" name="source_page" value="jullyconsult hub\sustainable empower her program sehp\index.html footer">
+        <button type="submit">Subscribe</button>
+      </div>
+    </form>
+<span>OWNED BY JULLY CONSULT LTD</span>
     <span>
-      <a href="../../terms-of-use/index.html">Terms of Use</a>
+      <a href="../../terms-of-use/">Terms of Use</a>
       |
-      <a href="../../privacy-policy/index.html">Privacy Policy</a>
+      <a href="../../privacy-policy/">Privacy Policy</a>
       |
       <a href="../../assets/downloads/jullyconsult-dei-policy.pdf">Diversity, Equality and Inclusion Policy</a>
     </span>
@@ -804,5 +839,7 @@
         }
       })();
     </script>
-  </body>
+    <script src="../../assets/js/form-feedback.js"></script>
+    <iframe name="jully-form-sink" class="form-feedback-sink" title="Form submission result"></iframe>
+</body>
 </html>

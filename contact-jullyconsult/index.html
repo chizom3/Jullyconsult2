@@ -227,19 +227,21 @@
     </style>
     <link rel="stylesheet" href="../assets/css/site-fixes.css" />
     <script src="../assets/js/mobile-menu-fix.js"></script>
+    <link rel="icon" type="image/png" href="../assets/images/Jully%20Consult%20logo.png">
+    <link rel="apple-touch-icon" href="../assets/images/Jully%20Consult%20logo.png">
 </head>
   <body class="contact-page">
     <header>
       <div class="container nav">
-        <a class="brand" href="../index.html" aria-label="JullyConsult home">
+        <a class="brand" href="../" aria-label="JullyConsult home">
           <img src="../assets/images/Jully Consult logo.png" alt="JullyConsult logo" />
         </a>
         <ul class="menu">
-          <li><a href="../index.html">HOME</a></li>
-          <li><a href="../about-jullyconsult/index.html">ABOUT</a></li>
-          <li><a href="../textile-collection-services/index.html">SERVICES</a></li>
-          <li><a href="../jullyconsult-hub/index.html">HUBS</a></li>
-          <li><a href="index.html" aria-current="page">CONTACT</a></li>
+          <li><a href="../">HOME</a></li>
+          <li><a href="../about-jullyconsult/">ABOUT</a></li>
+          <li><a href="../textile-collection-services/">SERVICES</a></li>
+          <li><a href="../jullyconsult-hub/">HUBS</a></li>
+          <li><a href="./" aria-current="page">CONTACT</a></li>
         </ul>
       </div>
     </header>
@@ -280,7 +282,7 @@
 
           <section class="card" aria-labelledby="contact-form-title">
             <h2 id="contact-form-title">Send a Message</h2>
-            <form id="contact-form" action="../send-form.php" method="post">
+            <form id="contact-form" action="../send-form.php" method="post" target="jully-form-sink" data-form-feedback="contact">
               <input type="hidden" name="form_source" value="Contact Page" />
               <label for="name">Full Name</label>
               <input id="name" name="name" type="text" autocomplete="name" required />
@@ -306,11 +308,24 @@
 
     <footer class="site-standard-footer">
   <div class="footer-inner">
-    <span>OWNED BY JULLY CONSULT LTD</span>
+        <form class="newsletter-signup-form" action="../subscribe-newsletter.php" method="post" target="jully-form-sink" data-form-feedback="newsletter">
+      <div class="newsletter-signup-copy">
+        <strong>Subscribe to our newsletter</strong>
+        <span>Get JullyConsult updates on circular fashion, ESG initiatives, and community programs.</span>
+      </div>
+      <div class="newsletter-signup-controls">
+        <label class="sr-only" for="newsletter-email-1">Email address</label>
+        <input id="newsletter-email-1" type="email" name="email" placeholder="Email address" autocomplete="email" required>
+        <input type="text" name="website" tabindex="-1" autocomplete="off" class="newsletter-hp" aria-hidden="true">
+        <input type="hidden" name="source_page" value="contact jullyconsult\index.html footer">
+        <button type="submit">Subscribe</button>
+      </div>
+    </form>
+<span>OWNED BY JULLY CONSULT LTD</span>
     <span>
-      <a href="../terms-of-use/index.html">Terms of Use</a>
+      <a href="../terms-of-use/">Terms of Use</a>
       |
-      <a href="../privacy-policy/index.html">Privacy Policy</a>
+      <a href="../privacy-policy/">Privacy Policy</a>
       |
       <a href="../assets/downloads/jullyconsult-dei-policy.pdf">Diversity, Equality and Inclusion Policy</a>
     </span>
@@ -323,7 +338,9 @@
     <span>Copyright &copy; 2026 Jully Consult. All rights reserved.</span>
   </div>
 </footer>
-  </body>
+    <script src="../assets/js/form-feedback.js"></script>
+    <iframe name="jully-form-sink" class="form-feedback-sink" title="Form submission result"></iframe>
+</body>
 </html>
 
 

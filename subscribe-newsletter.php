@@ -3,20 +3,14 @@ declare(strict_types=1);
 
 $recipient = 'info@jullyconsult.com.ng';
 $siteName = 'JullyConsult';
+$storageFile = __DIR__ . '/newsletter-subscribers.csv';
 
-function clean_text(string $value): string
-{
-    $value = trim($value);
-    $value = preg_replace('/[\r\n]+/', "\n", $value) ?? $value;
-    return $value;
-}
-
-function clean_header(string $value): string
+function clean_header_value(string $value): string
 {
     return trim(preg_replace('/[\r\n]+/', ' ', $value) ?? $value);
 }
 
-function h(string $value): string
+function html_escape(string $value): string
 {
     return htmlspecialchars($value, ENT_QUOTES, 'UTF-8');
 }
@@ -47,7 +41,7 @@ function render_response(string $title, string $message, int $statusCode = 200):
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title><?php echo h($title); ?> | JullyConsult</title>
+    <title><?php echo html_escape($title); ?> | JullyConsult</title>
     <style>
       body {
         margin: 0;
@@ -94,8 +88,8 @@ function render_response(string $title, string $message, int $statusCode = 200):
   <body>
     <main>
       <section class="card">
-        <h1><?php echo h($title); ?></h1>
-        <p><?php echo h($message); ?></p>
+        <h1><?php echo html_escape($title); ?></h1>
+        <p><?php echo html_escape($message); ?></p>
         <a href="./">Return Home</a>
       </section>
     </main>
@@ -105,52 +99,61 @@ function render_response(string $title, string $message, int $statusCode = 200):
 }
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    render_response('Form Not Submitted', 'Please submit the form from the website.', 405);
+    render_response('Newsletter Not Submitted', 'Please submit the newsletter form from the website.', 405);
     exit;
-} else {
-    $name = clean_header((string)($_POST['name'] ?? 'Website Visitor'));
-    $email = clean_header((string)($_POST['email'] ?? ''));
-    $source = clean_header((string)($_POST['form_source'] ?? 'Website Form'));
-    $subjectInput = clean_header((string)($_POST['subject'] ?? $source));
-
-    if ($email === '' || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        render_response('Invalid Email Address', 'Please enter a valid email address.', 400);
-        exit;
-    } else {
-        $lines = [];
-        foreach ($_POST as $key => $value) {
-            if ($key === 'form_source') {
-                continue;
-            }
-
-            $label = ucwords(str_replace('_', ' ', (string)$key));
-            if (is_array($value)) {
-                $value = implode(', ', array_map('strval', $value));
-            }
-
-            $lines[] = $label . ': ' . clean_text((string)$value);
-        }
-
-        $body = "New website form submission from {$siteName}\n\n";
-        $body .= "Form: {$source}\n\n";
-        $body .= implode("\n", $lines);
-        $body .= "\n\nSubmitted: " . date('Y-m-d H:i:s');
-
-        $subject = $siteName . ' Form: ' . ($subjectInput !== '' ? $subjectInput : $source);
-        $headers = [
-            'From: JullyConsult Website <info@jullyconsult.com.ng>',
-            'Reply-To: ' . $email,
-            'Content-Type: text/plain; charset=UTF-8',
-        ];
-
-        $sent = @mail($recipient, $subject, $body, implode("\r\n", $headers));
-
-        if ($sent) {
-            render_response('Message Sent', 'Thank you. Your message has been sent to JullyConsult.');
-            exit;
-        } else {
-            render_response('Message Could Not Be Sent', 'The website could not send your message. Please email info@jullyconsult.com.ng directly.', 500);
-            exit;
-        }
-    }
 }
+
+$honeypot = (string)($_POST['website'] ?? '');
+if ($honeypot !== '') {
+    render_response('Subscription Received', 'Thank you for subscribing to JullyConsult updates.');
+    exit;
+}
+
+$email = clean_header_value((string)($_POST['email'] ?? ''));
+$name = clean_header_value((string)($_POST['name'] ?? ''));
+$source = clean_header_value((string)($_POST['source_page'] ?? 'Website footer'));
+
+if ($email === '' || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    render_response('Invalid Email Address', 'Please go back and enter a valid email address.', 400);
+    exit;
+}
+
+$date = date('Y-m-d H:i:s');
+$row = [$date, $email, $name, $source, $_SERVER['REMOTE_ADDR'] ?? ''];
+
+$stored = false;
+$handle = fopen($storageFile, 'ab');
+if ($handle !== false) {
+    if (flock($handle, LOCK_EX)) {
+        if (filesize($storageFile) === 0) {
+            fputcsv($handle, ['submitted_at', 'email', 'name', 'source_page', 'ip_address'], ',', '"', '', "\n");
+        }
+        fputcsv($handle, $row, ',', '"', '', "\n");
+        flock($handle, LOCK_UN);
+        $stored = true;
+    }
+    fclose($handle);
+}
+
+$body = "New newsletter subscription from {$siteName}\n\n";
+$body .= "Email: {$email}\n";
+if ($name !== '') {
+    $body .= "Name: {$name}\n";
+}
+$body .= "Source: {$source}\n";
+$body .= "Submitted: {$date}\n";
+
+$headers = [
+    'From: JullyConsult Website <info@jullyconsult.com.ng>',
+    'Reply-To: ' . $email,
+    'Content-Type: text/plain; charset=UTF-8',
+];
+
+$sent = @mail($recipient, $siteName . ' Newsletter Subscription', $body, implode("\r\n", $headers));
+
+if ($sent || $stored) {
+    render_response('Subscription Received', 'Thank you for subscribing to JullyConsult updates.');
+    exit;
+}
+
+render_response('Subscription Could Not Be Saved', 'Please email info@jullyconsult.com.ng and ask to be added to the newsletter.', 500);

@@ -227,25 +227,53 @@
     </style>
     <link rel="stylesheet" href="../assets/css/site-fixes.css" />
     <script src="../assets/js/mobile-menu-fix.js"></script>
+    <link rel="icon" type="image/png" href="../assets/images/Jully%20Consult%20logo.png">
+    <link rel="apple-touch-icon" href="../assets/images/Jully%20Consult%20logo.png">
 </head>
   <body class="contact-page">
     <header>
       <div class="container nav">
-        <a class="brand" href="../index.html" aria-label="JullyConsult home">
+        <a class="brand" href="../" aria-label="JullyConsult home">
           <img src="../assets/images/Jully Consult logo.png" alt="JullyConsult logo" />
         </a>
         <ul class="menu">
-          <li><a href="../index.html">HOME</a></li>
-          <li><a href="../about-jullyconsult/index.html">ABOUT</a></li>
-          <li><a href="../textile-collection-services/index.html">SERVICES</a></li>
-          <li><a href="../jullyconsult-hub/index.html">HUBS</a></li>
-          <li><a href="index.html" aria-current="page">CONTACT</a></li>
+          <li><a href="../">HOME</a></li>
+          <li class="menu-item-has-children">
+            <a href="../about-jullyconsult/">ABOUT</a>
+            <ul class="sub-menu">
+              <li><a href="../about-jullyconsult/">Jully Consult</a></li>
+              <li><a href="../esg-commitment/">ESG COMMITMENT</a></li>
+              <li><a href="../partnerships-and-initiatives/">INITIATIVES AND ECO EVENTS</a></li>
+              <li><a href="../creative-design-portfolio/">CREATIVE DESIGN PORTFOLIO</a></li>
+            </ul>
+          </li>
+          <li class="menu-item-has-children">
+            <a href="../textile-collection-services/">SERVICES</a>
+            <ul class="sub-menu">
+              <li><a href="../textile-collection-services/">COLLECTION</a></li>
+              <li><a href="../textile-sorting-services/">SORTING</a></li>
+              <li><a href="../repair-and-reproduction/">REPAIR AND REPRODUCTION</a></li>
+              <li><a href="../second-hand-textile-distribution/">MARKET ACCESS & DISTRIBUTION</a></li>
+              <li><a href="../textile-recycling-and-ai-designs/">AI INNOVATION & ZERO-WASTE DESIGN</a></li>
+              <li><a href="../shredded-fiber-and-products/">SHREDDED FIBER &amp; PRODUCTS</a></li>
+              <li><a href="../water-conservation/">WATER CONSERVATION</a></li>
+              <li><a href="../solar-energy-integration/">SOLAR ENERGY INTEGRATION</a></li>
+            </ul>
+          </li>
+          <li><a href="../jullyconsult-hub/">HUBS</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="./" aria-current="page">CONTACT</a></li>
         </ul>
       </div>
     </header>
 
     <main>
       <div class="container">
+        <nav class="contact-breadcrumbs" aria-label="Breadcrumb">
+          <a href="../">Home</a>
+          <span aria-hidden="true">/</span>
+          <span>Contact</span>
+        </nav>
         <section class="hero">
           <h1>Contact Us</h1>
           <p>
@@ -280,7 +308,7 @@
 
           <section class="card" aria-labelledby="contact-form-title">
             <h2 id="contact-form-title">Send a Message</h2>
-            <form id="contact-form" action="../send-form.php" method="post">
+            <form id="contact-form" action="../send-form.php" method="post" target="jully-form-sink" data-form-feedback="contact">
               <input type="hidden" name="form_source" value="Contact Page" />
               <label for="name">Full Name</label>
               <input id="name" name="name" type="text" autocomplete="name" required />
@@ -302,15 +330,105 @@
           </section>
         </div>
       </div>
+      <section id="faq" class="faq-section" aria-labelledby="faq-title">
+        <div class="faq-container">
+          <div class="faq-header">
+            <span class="faq-eyebrow">Frequently Asked Questions</span>
+            <h2 id="faq-title">Jully Consult FAQ</h2>
+            <p>
+              Clear answers on our circular fashion production, AI-supported zero-waste design, and community impact work.
+            </p>
+          </div>
+          <div class="faq-list">
+            <details class="faq-item" open>
+              <summary>Why does Jully Consult produce a wide range of fashion items, including reusable pads, outfits, and artworks?</summary>
+              <div class="faq-answer">
+                <p>
+                  Jully Consult began by producing reusable pads and bags from fabric waste sourced from tailoring shops, textile industries, and other outlets. We later realized that producing only those items was not enough to fully use the large volume of fabric waste generated.
+                </p>
+                <p>
+                  To address this, we expanded into outfits, berets, artworks, earrings, and other fashion accessories. The product we create depends on the size, shape, and quantity of the available fabric waste, helping us make the most of every piece of material.
+                </p>
+                <p>
+                  Our mission is simple: eliminate fabric waste completely, "waste all the waste", while contributing to zero emissions and a cleaner environment.
+                </p>
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary>Why does Jully Consult use AI tools alongside fabric waste and textile leftover production?</summary>
+              <div class="faq-answer">
+                <p>
+                  As our work gained attention, customers began requesting custom outfit designs beyond upcycled products. Because we have comprehensive fashion design expertise, we expanded into full garment and outfit production to meet this demand.
+                </p>
+                <p>
+                  To stay true to our sustainability mission, we introduced AI-powered tools at the cutting stage of production. These tools help us minimize fabric waste, optimize fabric usage in every design, and support other fashion houses and industries in reducing their own waste.
+                </p>
+                <p>
+                  This process helps us reduce waste at the source, repurpose collected fabric waste into new products, prevent landfill waste, reduce harmful burning that releases pollutants such as carbon monoxide, and help mitigate air pollution, climate change, and flooding caused by clogged waterways.
+                </p>
+                <p>
+                  This technology-driven approach is a key innovation in our work, and we are actively working to expand its impact across the fashion and textile industry.
+                </p>
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary>How does your work support women and vulnerable communities?</summary>
+              <div class="faq-answer">
+                <p>We support communities by:</p>
+                <ul>
+                  <li>Providing skills training for income generation.</li>
+                  <li>Offering microgrants and business support.</li>
+                  <li>Promoting economic independence.</li>
+                  <li>Including mental health and psychosocial support in training.</li>
+                </ul>
+                <p>
+                  Our goal is to restore dignity, create jobs, and build resilient communities through sustainability.
+                </p>
+              </div>
+            </details>
+            <details class="faq-item">
+              <summary>What is circular fashion, and how does Jully Consult practice it?</summary>
+              <div class="faq-answer">
+                <p>
+                  Circular fashion is a system where clothing and materials are reused, recycled, and redesigned instead of being discarded.
+                </p>
+                <p>At Jully Consult, we practice circular fashion by:</p>
+                <ul>
+                  <li>Transforming waste into new fashion products.</li>
+                  <li>Designing zero-waste patterns with AI tools.</li>
+                  <li>Extending the lifecycle of garments through repair and reuse.</li>
+                  <li>Reinserting sustainable products back into the market.</li>
+                </ul>
+                <p>
+                  This approach reduces environmental harm and promotes responsible consumption.
+                </p>
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer class="site-standard-footer">
   <div class="footer-inner">
-    <span>OWNED BY JULLY CONSULT LTD</span>
+        <form class="newsletter-signup-form" action="../subscribe-newsletter.php" method="post" target="jully-form-sink" data-form-feedback="newsletter">
+      <div class="newsletter-signup-copy">
+        <strong>Subscribe to our newsletter</strong>
+        <span>Get JullyConsult updates on circular fashion, ESG initiatives, and community programs.</span>
+      </div>
+      <div class="newsletter-signup-controls">
+        <label class="sr-only" for="newsletter-email-2">Email address</label>
+        <input id="newsletter-email-2" type="email" name="email" placeholder="Email address" autocomplete="email" required>
+        <input type="text" name="website" tabindex="-1" autocomplete="off" class="newsletter-hp" aria-hidden="true">
+        <input type="hidden" name="source_page" value="contact jullyconsult en\index.html footer">
+        <button type="submit">Subscribe</button>
+      </div>
+    </form>
+<span>OWNED BY JULLY CONSULT LTD</span>
     <span>
-      <a href="../terms-of-use/index.html">Terms of Use</a>
+      <a href="../terms-of-use/">Terms of Use</a>
       |
-      <a href="../privacy-policy/index.html">Privacy Policy</a>
+      <a href="../privacy-policy/">Privacy Policy</a>
       |
       <a href="../assets/downloads/jullyconsult-dei-policy.pdf">Diversity, Equality and Inclusion Policy</a>
     </span>
@@ -323,7 +441,9 @@
     <span>Copyright &copy; 2026 Jully Consult. All rights reserved.</span>
   </div>
 </footer>
-  </body>
+    <script src="../assets/js/form-feedback.js"></script>
+    <iframe name="jully-form-sink" class="form-feedback-sink" title="Form submission result"></iframe>
+</body>
 </html>
 
 
